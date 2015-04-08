@@ -17,6 +17,8 @@ public class SimpleGame extends Game {
 	 * The lone 'object' in our simple game.
 	 */
 	SimpleSpaceObject ship;
+	FallingObject test;
+
 
 	/**
 	 * This constructor invokes the super constructor, then creates a ship
@@ -33,7 +35,11 @@ public class SimpleGame extends Game {
 		Point[] shipShape = { new Point(210, 100), new Point(190, 90),
 				new Point(200, 100), new Point(190, 110) };
 
-		ship = new SimpleSpaceObject(shipShape, new Point(200, 200), -90);
+		ship = new SimpleSpaceObject(shipShape, new Point(200, 800), -90);
+		
+		Point[] asObj = { new Point(10, 10), new Point(15, 15),
+				new Point(10, 10), new Point(8, 10), new Point(3,3) };
+		test = new FallingObject(asObj,new Point(100,100), -90);
 	}
 
 	/**
@@ -45,6 +51,10 @@ public class SimpleGame extends Game {
 		super.paintComponent(g);
 		g.setColor(Color.WHITE);
 		ship.paint(g);
+		//This moves the spaceship to the bottom of the canvas
+		//ship.move(1,0);
+		test.paint(g);
+		test.move(0, 1);
 	}
 
 	/**
