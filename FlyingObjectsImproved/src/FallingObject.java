@@ -1,10 +1,14 @@
 import java.awt.*;
+import java.util.Random;
+
+//Should this class create x amount of random objects?
 
 public class FallingObject implements SpaceObject  {
 	/**
 	 * Simple space objects can be represented by a single polygon.
 	 */
 	protected Polygon shape;
+	protected int MAX_SPEED = 5;
 	
 	/**
 	 * The only constructor, hooks up with Polygon constructor
@@ -26,9 +30,17 @@ public class FallingObject implements SpaceObject  {
 		// you may need to fill this in...
 	}
 
-	@Override
+	//Should Falling Objects Move be random? How should it affect as teh game progress?
+	//The random seems ot be flickering? How come?
+	public void move() {
+		Random rand = new Random();
+		int randx = rand.nextInt(MAX_SPEED);
+		int randy = rand.nextInt(MAX_SPEED);
+		shape.move(0,3);
+	}
+	
 	public void move(int x, int y) {
-		shape.move(x,y);
+		shape.move(x, y);
 	}
 
 	@Override

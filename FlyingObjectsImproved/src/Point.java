@@ -1,4 +1,4 @@
-
+import java.util.*;
 
 /**
  * 
@@ -14,12 +14,21 @@
  */
 class Point implements Cloneable {
 	double x, y;
+	protected static int MAX = 50;
 
 	public Point(double inX, double inY) {
 		x = inX;
 		y = inY;
 	}
 	
+	//This creates a random (x,y) if nothing is passed through.
+	public Point(){
+		Random rand = new Random();
+		double randx = rand.nextInt(MAX);
+		double randy = rand.nextInt(MAX);
+		x = randx;
+		y = randy;
+	}
 	/** 
 	 * A little bit of magic to make it easy to copy Points.
 	 * 
