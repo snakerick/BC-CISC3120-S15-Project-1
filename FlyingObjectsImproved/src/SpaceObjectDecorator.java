@@ -21,6 +21,7 @@ public abstract class SpaceObjectDecorator implements SpaceObject {
 
 	public SpaceObjectDecorator(SpaceObject decoratedObject) {
 		this.decoratedObject = decoratedObject;
+		
 	}
 
 	public void paint(Graphics g) {
