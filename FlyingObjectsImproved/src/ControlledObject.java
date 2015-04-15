@@ -5,16 +5,16 @@ import javax.swing.JPanel;
 
 
 //This should control the object
-public class ControlledObject extends JPanel implements SpaceObject {
+public class ControlledObject extends SpaceObjectDecorator {
 	static int a,b;
 	Polygon object;
-	public ControlledObject(Point[] inShape, Point inOffset, double inRotation) {
-		object = new Polygon(inShape, inOffset, inRotation);
+	public ControlledObject(SpaceObject decoratedObject) {
+		super(decoratedObject);
 
 	}
 	@Override
 	public void paint(Graphics g) {
-		object.paint(g);
+		super.paint(g);
 	}
 
 	@Override
@@ -24,12 +24,11 @@ public class ControlledObject extends JPanel implements SpaceObject {
 	}
 
 	public void move() {
-		object.move(a,b);
+		super.move(a,b);
 	}
 	
 	@Override
 	public void collide(SpaceObject obj) {
-		// TODO Auto-generated method stub
 
 	}
 	

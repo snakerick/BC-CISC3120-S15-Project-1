@@ -16,9 +16,12 @@ public class SimpleGame extends Game {
 	/**
 	 * The lone 'object' in our simple game.
 	 */
-	SimpleSpaceObject test;
-	FallingObject test1;
-	ControlledObject hello,ship;
+	SimpleSpaceObject ship;
+	FallingObject test4;
+	ControlledObject controlledObject;
+	SpaceObject dec;
+	SpaceObject obj;
+	
 	protected static int LEVELS = 1;
 
 
@@ -30,7 +33,7 @@ public class SimpleGame extends Game {
 	 * @param inWidth
 	 * @param inHeight
 	 */
-	
+
 	//How would the game contiune going? Should there be different levels?
 	public SimpleGame(String name, int inWidth, int inHeight) {
 		super(name, inWidth, inHeight);
@@ -39,15 +42,10 @@ public class SimpleGame extends Game {
 		Point[] shipShape = { new Point(210, 100), new Point(190, 90),
 				new Point(200, 100), new Point(190, 110) };
 
-		ship = new ControlledObject(shipShape, new Point(200, 800), -90);
-		
-		//Test to see if we can make a random point.
-		//Should FallingObjects spawn in random location?
-		//Should FallingObjects move at random location?
-		//How many side should the falling objects have?
-		Point[] testObj = { new Point(), new Point(), new Point(), new Point() };
-		test = new SimpleSpaceObject(testObj,new Point(150,200),-90);
-		test1 = new FallingObject(test);	
+		ship = new SimpleSpaceObject(shipShape, new Point(200, 800), -90);
+		obj = new SimpleSpaceObject(shipShape, new Point(200, 300), -90);
+		controlledObject = new ControlledObject(ship);
+		dec = new FallingObject(new SpinningObject(obj));
 		
 	}
 
@@ -59,15 +57,22 @@ public class SimpleGame extends Game {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.WHITE);
-		ship.paint(g);
-		ship.move();
-		//hello.paint(g);
-		
+		//controlledObject.paint(g);
+		//controlledObject.move();
+		dec.paint(g);
+		dec.rotate(1);
 	}
-	
-	public void createFallingObjects() {
-		
-	}
+
+	/*public void createFallingObjects(Graphics g) {
+		g.setColor(Color.GREEN);
+		for(int i = 0 ; i < 10 ; i++) {
+			Point[] testObj = { new Point(), new Point(), new Point(), new Point() };
+			test = new SimpleSpaceObject(testObj,new Point(200,200),-90);
+			test1[i] = new FallingObject(test);
+			test1[i].paint(g);
+			test1[i].move(0,0);
+		}
+	}*/
 
 	/**
 	 * In main, we create a new SimpleGame, make sure it has the keyboard focus
