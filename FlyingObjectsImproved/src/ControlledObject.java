@@ -23,10 +23,8 @@ public class ControlledObject extends JPanel implements SpaceObject {
 
 	}
 
-	public void move(int x, int y) {
-		x+=a;
-		y+=b;
-		object.move(x,y);
+	public void move() {
+		object.move(a,b);
 	}
 	
 	@Override
@@ -46,13 +44,11 @@ public class ControlledObject extends JPanel implements SpaceObject {
     }
 
     public static void keyPressed(KeyEvent e) {
-    	if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+    	/*if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
     		System.out.println("Right Released");
-    		a = 0;
     	}
     	if(e.getKeyCode() == KeyEvent.VK_LEFT) {
     		System.out.println("Left Released");
-    		a = 0;
-    	}
+    	} */
     }
 }

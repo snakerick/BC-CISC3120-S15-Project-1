@@ -38,7 +38,7 @@ public class SimpleGame extends Game {
 		Point[] shipShape = { new Point(210, 100), new Point(190, 90),
 				new Point(200, 100), new Point(190, 110) };
 
-		ship = new ControlledObject(shipShape, new Point(200, 650), -90);
+		ship = new ControlledObject(shipShape, new Point(200, 800), -90);
 		
 		//Test to see if we can make a random point.
 		//Should FallingObjects spawn in random location?
@@ -59,7 +59,7 @@ public class SimpleGame extends Game {
 		super.paintComponent(g);
 		g.setColor(Color.WHITE);
 		ship.paint(g);
-		ship.move(0,0);
+		ship.move();
 		//hello.paint(g);
 		
 	}
