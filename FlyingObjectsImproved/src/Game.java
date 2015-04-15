@@ -1,5 +1,7 @@
 import javax.swing.*;
 
+import java.awt.event.*;
+
 
 /**
  * 
@@ -17,7 +19,6 @@ public class Game extends JPanel implements Runnable {
 	Thread gameThread;
 	protected boolean running;
 	
-	
 	/**
 	 * 
 	 * Creates the game canvas. The canvas is a labeled window of the given
@@ -34,9 +35,7 @@ public class Game extends JPanel implements Runnable {
 	public Game(String name, int inWidth, int inHeight) {
 		JFrame frame = new JFrame(name);
 		frame.setSize(inWidth, inHeight);
-		
 		frame.add(this);
-		
 		frame.setVisible(true);
 		frame.setResizable(false);
 
@@ -68,5 +67,6 @@ public class Game extends JPanel implements Runnable {
 		}
 
 	}
+
 
 }

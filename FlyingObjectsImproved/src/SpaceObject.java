@@ -36,6 +36,6 @@ public interface SpaceObject {
 	 * Deal with a collision with another object
 	 * @param obj the other object involved in the collision
 	 */
-	public void collide(SpaceObject obj);	
+	public void collide(SpaceObject obj);
 
 }
