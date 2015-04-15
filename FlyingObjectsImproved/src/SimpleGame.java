@@ -19,6 +19,7 @@ public class SimpleGame extends Game {
 	SimpleSpaceObject test;
 	FallingObject test1;
 	ControlledObject hello,ship;
+	protected static int LEVELS = 1;
 
 
 	/**
@@ -61,6 +62,10 @@ public class SimpleGame extends Game {
 		ship.paint(g);
 		ship.move();
 		//hello.paint(g);
+		
+	}
+	
+	public void createFallingObjects() {
 		
 	}
 

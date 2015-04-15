@@ -12,6 +12,7 @@ public class SimpleSpaceObject implements SpaceObject {
 	 * Simple space objects can be represented by a single polygon.
 	 */
 	protected Polygon shape;
+	private Point [] temp;
 	
 	/**
 	 * The only constructor, hooks up with Polygon constructor
@@ -30,7 +31,12 @@ public class SimpleSpaceObject implements SpaceObject {
 
 	@Override
 	public void collide(SpaceObject obj) {
-		// you may need to fill this in...
+		temp = shape.getPoints();
+		for(int i = 0; i < temp.length ; i++ ) {
+			if( shape.contains(temp[i]) ) {
+				System.out.println("Yes");
+			}
+		}
 	}
 
 	@Override

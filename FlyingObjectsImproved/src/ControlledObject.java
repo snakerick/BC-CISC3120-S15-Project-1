@@ -32,6 +32,7 @@ public class ControlledObject extends JPanel implements SpaceObject {
 		// TODO Auto-generated method stub
 
 	}
+	
 	public static void keyReleased(KeyEvent e) {
     	if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
     		System.out.println("Right was Pressed");
@@ -42,13 +43,14 @@ public class ControlledObject extends JPanel implements SpaceObject {
     		a -= 1;
     	}
     }
-
-    public static void keyPressed(KeyEvent e) {
-    	/*if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+	
+    public static  void keyPressed(KeyEvent e) {
+    	if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
     		System.out.println("Right Released");
     	}
     	if(e.getKeyCode() == KeyEvent.VK_LEFT) {
     		System.out.println("Left Released");
-    	} */
+    	}
     }
+	
 }
