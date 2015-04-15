@@ -1,9 +1,14 @@
 
-public class SpinningObject extends SpaceObjectDecorator implements SpaceObject{
+public class SpinningObject extends SpaceObjectDecorator{
 
 	public SpinningObject(SpaceObject decoratedObject) {
 		super(decoratedObject);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	@Override
+	public void rotate(double d) {
+		super.rotate(d);
+		System.out.println("Spinning Object Rottating");
+	}
 }

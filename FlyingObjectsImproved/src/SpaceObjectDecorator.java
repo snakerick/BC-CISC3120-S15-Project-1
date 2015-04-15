@@ -39,5 +39,6 @@ public abstract class SpaceObjectDecorator implements SpaceObject {
 	public void rotate(double d) {
 		decoratedObject.rotate(d);
 	}
-
+	
+	
 }

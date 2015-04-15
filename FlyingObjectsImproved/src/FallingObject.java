@@ -3,7 +3,7 @@ import java.util.Random;
 
 //Should this class create x amount of random objects?
 
-public class FallingObject extends SpaceObjectDecorator implements SpaceObject{
+public class FallingObject extends SpaceObjectDecorator {
 
 	/**
 	 * Simple space objects can be represented by a single polygon.
@@ -34,24 +34,8 @@ public class FallingObject extends SpaceObjectDecorator implements SpaceObject{
 		// you may need to fill this in...
 	}
 
-	//Should Falling Objects Move be random? How should it affect as teh game progress?
-	//The random seems ot be flickering? How come?
-	/*public void move() {
-		Random rand = new Random();
-		int randx = rand.nextInt(MAX_SPEED);
-		int randy = rand.nextInt(MAX_SPEED);
-		super.move(randx,randy);
-	}*/
-	
-	//Should the speed increase as time goes on? How?
 	@Override
 	public void move(int x, int y) {
 		super.move(x, y);
-	}
-
-	@Override
-	public void rotate(double r) {
-		super.rotate(r);
-	}
-
+	}	
 }
