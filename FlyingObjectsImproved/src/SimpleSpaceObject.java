@@ -37,6 +37,8 @@ public class SimpleSpaceObject implements SpaceObject {
 		for(int i = 0; i < temp.length ; i++ ) {
 			if(shape.contains(temp[i])) {
 				System.out.println("yes");
+				Point[] test = { new Point(0,0), new Point(0,0), new Point(0,0) };
+				shape = new Polygon(test); 
 			}
 		}
 	}
