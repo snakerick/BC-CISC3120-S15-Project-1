@@ -127,14 +127,14 @@ class Polygon {
 	 */
 
 	public void move(double x, double y) {
-		if( offset.x > screenW) {
-			offset.x = 1;
+		if( offset.x >= screenW) {
+			offset.x = 0;
 		}
 		else if ( offset.x < screenW) {
 			offset.x += x;
 		}
-		if ( offset.y > screenH ) {
-			offset.y = 1;
+		if ( offset.y >= screenH ) {
+			offset.y = 0;
 		} 
 		else if( offset.y < screenH ) {
 			offset.y += y;
