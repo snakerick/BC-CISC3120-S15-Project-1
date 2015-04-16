@@ -47,7 +47,7 @@ public class SimpleGame extends Game {
 		addKeyListener(new KeyboardAdapter() );
 		Point[] shipShape = { new Point(210, 100), new Point(190, 90),
 				new Point(200, 100), new Point(190, 110) };
-		ship = new SimpleSpaceObject(shipShape, new Point(200, 800), -90);
+		ship = new SimpleSpaceObject(shipShape, new Point(200, 600), -90);
 		controlShip = new ControlledObject(ship);
 		createObjects(MAX_OBJECTS);
 	}
