@@ -133,11 +133,17 @@ class Polygon {
 		else if ( offset.x < screenW) {
 			offset.x += x;
 		}
-		if ( offset.y >= screenH ) {
+		if ( offset.x < -1 ) {
+			offset.x = screenW - 1;
+		}
+		if ( offset.y >= screenH) {
 			offset.y = 0;
 		} 
 		else if( offset.y < screenH ) {
 			offset.y += y;
+		}
+		if ( offset.y < -1 ) {
+			offset.y = screenH - 1;
 		}
 	}
 

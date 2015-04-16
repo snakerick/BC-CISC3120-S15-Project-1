@@ -8,14 +8,7 @@ public class FallingObject extends SpaceObjectDecorator {
 	 * Simple space objects can be represented by a single polygon.
 	 */
 	
-	/**
-	 * The only constructor, hooks up with Polygon constructor
-	 * @param inShape an array of Points specifying the shape of the Polygon (see Polygon docs)
-	 * @param inOffset initial position of the Polygon in space
-	 * @param inRotation initial rotation of the Polygon
-	 */
-	
-	
+		
 	public FallingObject(SpaceObject decoratedObject) {
 		super(decoratedObject);
 	}
