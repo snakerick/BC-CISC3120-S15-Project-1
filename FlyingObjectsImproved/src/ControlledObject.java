@@ -22,7 +22,7 @@ public class ControlledObject extends SpaceObjectDecorator {
 	
 	@Override
 	public void collide(SpaceObject obj) {
-
+		super.collide(obj);
 	}
 	
 	public static void keyReleased(KeyEvent e) {

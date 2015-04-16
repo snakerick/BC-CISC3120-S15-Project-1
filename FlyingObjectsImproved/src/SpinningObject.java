@@ -17,5 +17,10 @@ public class SpinningObject extends SpaceObjectDecorator{
 		// TODO Auto-generated method stub
 		return decoratedObject.getPoly();
 	}
+	
+	@Override
+	public void collide(SpaceObject obj){
+		super.collide(obj);
+	}
 
 }
