@@ -35,9 +35,12 @@ public class SimpleSpaceObject implements SpaceObject {
 		tempShape = obj.getPoly();
 		temp = tempShape.getPoints();
 		for(int i = 0; i < temp.length ; i++ ) {
-			System.out.println(shape.contains(temp[i]));
+			if(shape.contains(temp[i])) {
+				System.out.println("yes");
+			}
 		}
 	}
+	
 
 	@Override
 	public void move(int x, int y) {

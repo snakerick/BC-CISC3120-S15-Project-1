@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 //This should control the object
 public class ControlledObject extends SpaceObjectDecorator {
 	static int a,b;
-	Polygon object;
 	public ControlledObject(SpaceObject decoratedObject) {
 		super(decoratedObject);
 

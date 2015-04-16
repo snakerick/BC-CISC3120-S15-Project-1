@@ -52,7 +52,7 @@ public class SimpleGame extends Game {
 		ship = new SimpleSpaceObject(shipShape, new Point(200, 800), -90);
 		controlShip = new ControlledObject(ship);
 		Point[] testObj = { new Point(), new Point(), new Point(), new Point(), new Point() };
-		object = new SimpleSpaceObject(testObj,new Point(50,50),-90);
+		object = new SimpleSpaceObject(testObj, new Point(50, 50), -90);
 		test4 = new FallingObject(object);
 	}
 
