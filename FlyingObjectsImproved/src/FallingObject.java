@@ -9,7 +9,6 @@ public class FallingObject extends SpaceObjectDecorator {
 	 * Simple space objects can be represented by a single polygon.
 	 */
 	protected Polygon shape;
-	protected int MAX_SPEED = 5;
 	
 	/**
 	 * The only constructor, hooks up with Polygon constructor

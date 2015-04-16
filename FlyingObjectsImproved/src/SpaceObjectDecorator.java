@@ -26,7 +26,7 @@ public abstract class SpaceObjectDecorator implements SpaceObject {
 
 	public void paint(Graphics g) {
 		decoratedObject.paint(g);
-	}
+	} 
 
 	public void collide(SpaceObject obj) {
 		decoratedObject.collide(obj);

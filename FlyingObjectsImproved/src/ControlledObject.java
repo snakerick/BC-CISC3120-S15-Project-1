@@ -17,12 +17,6 @@ public class ControlledObject extends SpaceObjectDecorator {
 		super.paint(g);
 	}
 
-	@Override
-	public void rotate(double r) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public void move() {
 		super.move(a,b);
 	}
