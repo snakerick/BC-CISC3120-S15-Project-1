@@ -38,7 +38,7 @@ public class Game extends JPanel implements Runnable {
 		frame.add(this);
 		frame.setVisible(true);
 		frame.setResizable(false);
-
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		running = true;		
 		gameThread = new Thread(this);
 	}
