@@ -14,5 +14,6 @@ The user can use the 4 arrow keys: up, down, left, right to move the ship. Movin
 4. Sample codes from class.
 
 ## Code Summary
+######SimpleGame:
 
 ## Extra Credit Behavior
