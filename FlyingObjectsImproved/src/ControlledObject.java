@@ -49,7 +49,7 @@ public class ControlledObject extends SpaceObjectDecorator {
 	@Override
 	public Polygon getPoly() {
 		// TODO Auto-generated method stub
-		return null;
+		return decoratedObject.getPoly();
 	}
 	
 }

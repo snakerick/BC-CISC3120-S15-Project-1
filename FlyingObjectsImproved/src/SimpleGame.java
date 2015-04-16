@@ -53,7 +53,7 @@ public class SimpleGame extends Game {
 		controlShip = new ControlledObject(ship);
 		Point[] testObj = { new Point(), new Point(), new Point(), new Point(), new Point() };
 		object = new SimpleSpaceObject(testObj, new Point(50, 50), -90);
-		test4 = new FallingObject(object);
+		dec = new FallingObject(new SpinningObject(object));
 	}
 
 	/**
@@ -66,9 +66,10 @@ public class SimpleGame extends Game {
 		g.setColor(Color.WHITE);
 		controlShip.paint(g);
 		controlShip.move();
-		test4.paint(g);
-		test4.move(0, 1);
-		ship.collide(object);
+		dec.paint(g);
+		dec.move(0, 1);
+		dec.rotate(1);
+		ship.collide(dec);
 	}
 
 	public void createGameObjects() {
