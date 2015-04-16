@@ -10,7 +10,8 @@ The user can use the 4 arrow keys: up, down, left, right to move the ship. Movin
 ## Works Cited
 1. http://en.wikipedia.org/wiki/Decorator_pattern
 2. http://docs.oracle.com/javase/7/docs/api/
-3. http://codereview.stackexchange.com/questions/58063/better-way-to-implement-screen-wraparound
+3. http://codereview.stackexchange.com/questions/58063/better-way-to-implement-screen-wraparound (Used example code for wrap around)
+4. Sample codes from class.
 
 ## Code Summary
 
