@@ -25,9 +25,10 @@ public class SimpleGame extends Game {
 	//Used to create more then one object at once
 	protected static FallingObject []  fObjects;
 	
-	//Max amount of Objects and Level
+	//Variables needed for game to keep track
 	protected static int MAX_OBJECTS = 10;
 	protected static int LEVELS = 15;
+	protected static int SCORE = 0;
 	
 	//The max length of X
 	protected static int MAX_X = 400;
@@ -64,12 +65,21 @@ public class SimpleGame extends Game {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.WHITE);
+		g.drawString("SCORE: ",25,25);
+		g.drawString(Integer.toString(SCORE),80,25);
 		controlShip.paint(g);
 		controlShip.move();
 		dec.paint(g);
 		dec.move(0, 1);
 		dec.rotate(1);
 		ship.collide(dec);
+		if(ship.getPoly().findArea() == 0) {
+			g.drawString("Game Over", 150, 200);
+		} 
+		else{
+			SCORE+=10;
+			g.drawString(Integer.toString(SCORE),80,25);
+		}
 	}
 
 	public void createGameObjects() {
