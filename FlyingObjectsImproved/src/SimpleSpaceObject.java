@@ -36,7 +36,7 @@ public class SimpleSpaceObject implements SpaceObject {
 		temp = tempShape.getPoints();
 		for(int i = 0; i < temp.length ; i++ ) {
 			if(shape.contains(temp[i])) {
-				System.out.println("yes");
+				System.out.println("Object Collided");
 				Point[] test = { new Point(0,0), new Point(0,0), new Point(0,0) };
 				shape = new Polygon(test); 
 			}

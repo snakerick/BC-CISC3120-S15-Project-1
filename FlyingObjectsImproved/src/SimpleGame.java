@@ -22,12 +22,10 @@ public class SimpleGame extends Game {
 	SpaceObject object;
 	SpaceObject [] gameObjects;
 
-	//Variables needed for game to keep track
-	protected static int MAX_OBJECTS = 3;
+	//Variables needed for game to keep track of game
+	protected static int MAX_OBJECTS = 4;
 	protected static int LEVELS = 5;
 	protected static int SCORE = 0;
-
-	//The max length of X
 	protected static int MAX_X = 400;
 	protected Random randNum = new Random();
 
@@ -47,7 +45,7 @@ public class SimpleGame extends Game {
 		addKeyListener(new KeyboardAdapter() );
 		Point[] shipShape = { new Point(210, 100), new Point(190, 90),
 				new Point(200, 100), new Point(190, 110) };
-		ship = new SimpleSpaceObject(shipShape, new Point(200, 600), -90);
+		ship = new SimpleSpaceObject(shipShape, new Point(200, 300), -90);
 		controlShip = new ControlledObject(ship);
 		createObjects(MAX_OBJECTS);
 	}
@@ -66,7 +64,8 @@ public class SimpleGame extends Game {
 		controlShip.move();
 		for(int i = 0 ; i < gameObjects.length ; i++ ){
 			gameObjects[i].paint(g);
-			gameObjects[i].move(gameObjects.length, LEVELS);
+			gameObjects[i].move(LEVELS, LEVELS);
+			gameObjects[i].rotate(LEVELS);
 			ship.collide(gameObjects[i]);
 			if(ship.getPoly().findArea() == 0) {
 				g.drawString("Game Over", 150, 200);

@@ -1,3 +1,5 @@
+import java.util.Random;
+
 
 public class SpinningObject extends SpaceObjectDecorator{
 
@@ -8,7 +10,9 @@ public class SpinningObject extends SpaceObjectDecorator{
 	
 	@Override
 	public void rotate(double d) {
-		super.rotate(d);
+		Random randNum = new Random();
+		double randRotate = (double) randNum.nextInt((int) d);
+		super.rotate(randRotate);
 		System.out.println("Spinning Object Rottating");
 	}
 

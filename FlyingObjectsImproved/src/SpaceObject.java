@@ -37,6 +37,9 @@ public interface SpaceObject {
 	 */
 	public void collide(SpaceObject obj);
 	
+	/**
+	 * Returns the Polygon shape which is used to check for collide
+	 */
 	public Polygon getPoly();
 	
 }

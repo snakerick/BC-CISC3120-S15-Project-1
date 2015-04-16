@@ -4,11 +4,9 @@ import java.util.Random;
 //Should this class create x amount of random objects?
 
 public class FallingObject extends SpaceObjectDecorator {
-
 	/**
 	 * Simple space objects can be represented by a single polygon.
 	 */
-	protected Polygon shape;
 	
 	/**
 	 * The only constructor, hooks up with Polygon constructor
@@ -35,11 +33,12 @@ public class FallingObject extends SpaceObjectDecorator {
 	}
 
 	@Override
-	public void move(int x, int y) {
+	public void move(int x, int y ) {
 		Random randNum = new Random();
 		int randY = randNum.nextInt(y);
-		super.move(0, y);
-		System.out.println("Falling Object");
+		int randX = randNum.nextInt(x);
+		super.move(randX, randY);
+		//System.out.println("Falling Object");
 	}
 
 	@Override
