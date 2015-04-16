@@ -30,7 +30,8 @@ public class FallingObject extends SpaceObjectDecorator {
 
 	@Override
 	public void collide(SpaceObject obj) {
-		// you may need to fill this in...
+		super.collide(obj);
+		
 	}
 
 	@Override
