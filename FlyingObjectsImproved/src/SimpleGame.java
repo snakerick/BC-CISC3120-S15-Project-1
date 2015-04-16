@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 /**
  * A very simple example of how to use the Game base class.
@@ -16,13 +17,19 @@ public class SimpleGame extends Game {
 	/**
 	 * The lone 'object' in our simple game.
 	 */
-	SimpleSpaceObject ship;
+	ControlledObject ship;
 	FallingObject test4;
 	ControlledObject controlledObject;
-	SpaceObject dec;
-	SpaceObject obj;
+	SpaceObject dec, obj, object;
 	
+	//Used to create more then one object at once
+	protected static FallingObject []  fObjects;
+	
+	//Max amount of Objects and Level
+	protected static int MAX_OBJECTS = 10;
 	protected static int LEVELS = 1;
+	//The max length of X
+	protected static int MAX_X = 400;
 
 
 	/**
@@ -34,18 +41,14 @@ public class SimpleGame extends Game {
 	 * @param inHeight
 	 */
 
-	//How would the game contiune going? Should there be different levels?
 	public SimpleGame(String name, int inWidth, int inHeight) {
 		super(name, inWidth, inHeight);
 		setBackground(Color.BLACK);
 		addKeyListener(new KeyboardAdapter() );
 		Point[] shipShape = { new Point(210, 100), new Point(190, 90),
 				new Point(200, 100), new Point(190, 110) };
-
-		ship = new SimpleSpaceObject(shipShape, new Point(200, 800), -90);
-		obj = new SimpleSpaceObject(shipShape, new Point(200, 300), -90);
-		controlledObject = new ControlledObject(ship);
-		dec = new FallingObject(new SpinningObject(obj));
+		ship = new ControlledObject(new SimpleSpaceObject(shipShape, new Point(200, 800), -90));
+		createFallingObjects(MAX_OBJECTS);
 		
 	}
 
@@ -57,22 +60,25 @@ public class SimpleGame extends Game {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.WHITE);
-		//controlledObject.paint(g);
-		//controlledObject.move();
-		dec.paint(g);
-		dec.rotate(1);
+		ship.paint(g);
+		ship.move();
+		//dec.paint(g);
+		//dec.rotate(1);
+
 	}
 
-	/*public void createFallingObjects(Graphics g) {
-		g.setColor(Color.GREEN);
-		for(int i = 0 ; i < 10 ; i++) {
+	
+	public void createFallingObjects(int objSize) {
+		fObjects = new FallingObject[objSize];
+		Random randNum = new Random();
+		int randX;
+		for(int i = 0 ; i < objSize ; i++) {
+			randX = randNum.nextInt(MAX_X);
 			Point[] testObj = { new Point(), new Point(), new Point(), new Point() };
-			test = new SimpleSpaceObject(testObj,new Point(200,200),-90);
-			test1[i] = new FallingObject(test);
-			test1[i].paint(g);
-			test1[i].move(0,0);
+			object = new SimpleSpaceObject(testObj,new Point(randX,100),-90);
+			fObjects[i] = new FallingObject(object);
 		}
-	}*/
+	}
 
 	/**
 	 * In main, we create a new SimpleGame, make sure it has the keyboard focus
