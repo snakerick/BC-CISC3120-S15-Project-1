@@ -44,6 +44,8 @@ class Polygon {
 	protected Point[] shape; // An array of points.
 	protected Point offset; // The offset mentioned above
 	protected double rotation; // Zero degrees is "east."
+	protected double screenW = 401; //Set the screen width, to create wrap around for x
+	protected double screenH = 901; //Set the screen height, to create wrap around for y
 
 	/*
 	 * The constructor 'stores' the shape as being at the origin; anytime we're
@@ -125,8 +127,18 @@ class Polygon {
 	 */
 
 	public void move(double x, double y) {
-		offset.x += x;
-		offset.y += y;
+		if( offset.x > screenW) {
+			offset.x = 1;
+		}
+		else if ( offset.x < screenW) {
+			offset.x += x;
+		}
+		if ( offset.y > screenH ) {
+			offset.y = 1;
+		} 
+		else if( offset.y < screenH ) {
+			offset.y += y;
+		}
 	}
 
 	/**
