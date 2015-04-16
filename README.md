@@ -15,5 +15,18 @@ The user can use the 4 arrow keys: up, down, left, right to move the ship. Movin
 
 ## Code Summary
 ######SimpleGame:
+This class creates the game and the objects for the game. It also keeps track of the score and when the game is done. 
+######KeyboardAdpater 
+This is uses the adapter design method to create a keyboardadapter class which allows the user to control a specific object.
+######FallingObject, SpinningObject, ControlledObject
+These three classes does the following: ######FallingObject, makes the object fall from the screen with a wrap around. ######SpinningObject, allows the object to rotate wiht a specific *r*. ######ControlledObject, allows the object passed in to have user controll. All these threw classes takes in a SpaceObject which is create by the SimpleGame. 
+######Polygon
+The method for *move* was changed so that a wrap around was created in the game. This allows the object that falls out of the boarder to come back in on the opposite side, like a *circle*.
+######SimpleSpaceObject
+This creates a simple *SpaceObject* which takes in points from a polygon. 
+The collide method was filled in, so that when the object being passed in the arugument *collides* with the other, the one that is calling the function disappears and set the area to 0.
+######SpaceObject Interface
+The method *getPoly()* was added which returns a Polygon so that it would be easier to test to see if two objects collide.
 
 ## Extra Credit Behavior
+None.
