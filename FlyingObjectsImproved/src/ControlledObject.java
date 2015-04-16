@@ -34,6 +34,14 @@ public class ControlledObject extends SpaceObjectDecorator {
     		System.out.println("Left was Pressed");
     		a -= 1;
     	}
+      	if(e.getKeyCode() == KeyEvent.VK_UP) {
+    		System.out.println("Right was Pressed");
+    		b -= 1;
+    	}
+    	if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+    		System.out.println("Left was Pressed");
+    		b += 1;
+    	}
     }
 	
     public static  void keyPressed(KeyEvent e) {
