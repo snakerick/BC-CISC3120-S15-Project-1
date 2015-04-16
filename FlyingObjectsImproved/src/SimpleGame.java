@@ -17,9 +17,9 @@ public class SimpleGame extends Game {
 	/**
 	 * The lone 'object' in our simple game.
 	 */
-	ControlledObject ship;
+	SimpleSpaceObject ship;
 	FallingObject test4;
-	ControlledObject controlledObject;
+	ControlledObject controlShip;
 	SpaceObject dec, obj, object;
 	
 	//Used to create more then one object at once
@@ -27,9 +27,11 @@ public class SimpleGame extends Game {
 	
 	//Max amount of Objects and Level
 	protected static int MAX_OBJECTS = 10;
-	protected static int LEVELS = 1;
+	protected static int LEVELS = 15;
+	
 	//The max length of X
 	protected static int MAX_X = 400;
+	protected Random randNum = new Random();
 
 
 	/**
@@ -47,9 +49,11 @@ public class SimpleGame extends Game {
 		addKeyListener(new KeyboardAdapter() );
 		Point[] shipShape = { new Point(210, 100), new Point(190, 90),
 				new Point(200, 100), new Point(190, 110) };
-		ship = new ControlledObject(new SimpleSpaceObject(shipShape, new Point(200, 800), -90));
-		createFallingObjects(MAX_OBJECTS);
-		
+		ship = new SimpleSpaceObject(shipShape, new Point(200, 800), -90);
+		controlShip = new ControlledObject(ship);
+		Point[] testObj = { new Point(), new Point(), new Point(), new Point(), new Point() };
+		object = new SimpleSpaceObject(testObj,new Point(50,50),-90);
+		test4 = new FallingObject(object);
 	}
 
 	/**
@@ -60,24 +64,29 @@ public class SimpleGame extends Game {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.WHITE);
-		ship.paint(g);
-		ship.move();
-		//dec.paint(g);
-		//dec.rotate(1);
-
+		controlShip.paint(g);
+		controlShip.move();
+		test4.paint(g);
+		test4.move(0, 1);
+		ship.collide(object);
 	}
 
+	public void createGameObjects() {
+		createFallingObjects(MAX_OBJECTS);
+	}
+	
 	
 	public void createFallingObjects(int objSize) {
 		fObjects = new FallingObject[objSize];
-		Random randNum = new Random();
 		int randX;
 		for(int i = 0 ; i < objSize ; i++) {
 			randX = randNum.nextInt(MAX_X);
-			Point[] testObj = { new Point(), new Point(), new Point(), new Point() };
-			object = new SimpleSpaceObject(testObj,new Point(randX,100),-90);
+			Point[] testObj = { new Point(), new Point(), new Point(), new Point(), new Point(), new Point() };
+			object = new SimpleSpaceObject(testObj,new Point(randX,50),-90);
 			fObjects[i] = new FallingObject(object);
 		}
+		//Increase the level
+		LEVELS = LEVELS + 1;
 	}
 
 	/**

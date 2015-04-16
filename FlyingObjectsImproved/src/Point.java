@@ -14,7 +14,7 @@ import java.util.*;
  */
 class Point implements Cloneable {
 	double x, y;
-	protected static int MAX = 50;
+	protected static int MAX = 75;
 
 	public Point(double inX, double inY) {
 		x = inX;

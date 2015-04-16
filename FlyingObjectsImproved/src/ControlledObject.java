@@ -45,5 +45,12 @@ public class ControlledObject extends SpaceObjectDecorator {
     		System.out.println("Left Released");
     	}
     }
+
+
+	@Override
+	public Polygon getPoly() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

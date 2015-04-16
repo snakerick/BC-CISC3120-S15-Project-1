@@ -13,6 +13,7 @@ public class SimpleSpaceObject implements SpaceObject {
 	 */
 	protected Polygon shape;
 	private Point [] temp;
+	protected Polygon tempShape;
 	
 	/**
 	 * The only constructor, hooks up with Polygon constructor
@@ -31,11 +32,10 @@ public class SimpleSpaceObject implements SpaceObject {
 
 	@Override
 	public void collide(SpaceObject obj) {
-		temp = shape.getPoints();
+		tempShape = obj.getPoly();
+		temp = tempShape.getPoints();
 		for(int i = 0; i < temp.length ; i++ ) {
-			if( shape.contains(temp[i]) ) {
-				System.out.println("Yes");
-			}
+			System.out.println(shape.contains(temp[i]));
 		}
 	}
 
@@ -47,6 +47,11 @@ public class SimpleSpaceObject implements SpaceObject {
 	@Override
 	public void rotate(double r) {
 		shape.rotate(r);
+	}
+
+	@Override
+	public Polygon getPoly() {
+		return shape;
 	}
 
 }

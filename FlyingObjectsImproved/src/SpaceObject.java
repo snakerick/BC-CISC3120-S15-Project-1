@@ -12,7 +12,6 @@ import java.awt.*;
 
 public interface SpaceObject {
 
-	
 	/**
 	 * Move the SpaceObject in space
 	 * @param x number of pixels to move horizontally (positive=rightward)
@@ -37,5 +36,7 @@ public interface SpaceObject {
 	 * @param obj the other object involved in the collision
 	 */
 	public void collide(SpaceObject obj);
-
+	
+	public Polygon getPoly();
+	
 }

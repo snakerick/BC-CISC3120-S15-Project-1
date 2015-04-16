@@ -236,7 +236,7 @@ class Polygon {
 	}
 
 	/*
-	 * note the unusual loop control: a double initializer and a double
+	 * note the unusual loop control: a double initializer and a double public void intersect(Area rhs)
 	 * increment refer to http://en.wikipedia.org/wiki/Polygon#Area_and_centroid
 	 * to see the formula this is based on
 	 */
@@ -248,7 +248,7 @@ class Polygon {
 	 * 
 	 * @return The area of this polygon.
 	 */
-	private double findArea() {
+	double findArea() {
 		double sum = 0;
 		for (int i = 0, j = 1; i < shape.length; i++, j = (j + 1)
 				% shape.length) {

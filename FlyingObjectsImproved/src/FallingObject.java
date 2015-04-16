@@ -36,5 +36,11 @@ public class FallingObject extends SpaceObjectDecorator {
 	@Override
 	public void move(int x, int y) {
 		super.move(x, y);
+	}
+
+	@Override
+	public Polygon getPoly() {
+		// TODO Auto-generated method stub
+		return null;
 	}	
 }

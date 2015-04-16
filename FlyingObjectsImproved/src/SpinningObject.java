@@ -11,4 +11,11 @@ public class SpinningObject extends SpaceObjectDecorator{
 		super.rotate(d);
 		System.out.println("Spinning Object Rottating");
 	}
+
+	@Override
+	public Polygon getPoly() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
