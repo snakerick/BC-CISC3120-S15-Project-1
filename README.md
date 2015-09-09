@@ -19,7 +19,7 @@ This class creates the game and the objects for the game. It also keeps track of
 ######KeyboardAdpater 
 This is uses the adapter design method to create a keyboardadapter class which allows the user to control a specific object.
 ######FallingObject, SpinningObject, ControlledObject
-These three classes does the following: ######FallingObject, makes the object fall from the screen with a wrap around. ######SpinningObject, allows the object to rotate wiht a specific *r*. ######ControlledObject, allows the object passed in to have user controll. All these threw classes takes in a SpaceObject which is create by the SimpleGame. 
+These three classes does the following: FallingObject, makes the object fall from the screen with a wrap around. SpinningObject, allows the object to rotate wiht a specific *r*. ControlledObject, allows the object passed in to have user controll. All these threw classes takes in a SpaceObject which is create by the SimpleGame. 
 ######Polygon
 The method for *move* was changed so that a wrap around was created in the game. This allows the object that falls out of the boarder to come back in on the opposite side, like a *circle*.
 ######SimpleSpaceObject
@@ -28,5 +28,3 @@ The collide method was filled in, so that when the object being passed in the ar
 ######SpaceObject Interface
 The method *getPoly()* was added which returns a Polygon so that it would be easier to test to see if two objects collide.
 
-## Extra Credit Behavior
-None.
